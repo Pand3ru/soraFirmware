@@ -1,7 +1,7 @@
-if SHIELD_ICARUS_LEFT
+if SHIELD_SORA_LEFT
 
 config ZMK_KEYBOARD_NAME
-  default "Icarus"
+  default "Sora"
 
 config ZMK_SPLIT_ROLE_CENTRAL
   default y
@@ -9,15 +9,6 @@ config ZMK_SPLIT_ROLE_CENTRAL
 # OLED Display 
 config ZMK_DISPLAY
   default y
-
-config ZMK_WIDGET_LAYER_STATUS
-  default y
-
-#config ZMK_WIDGET_BATTERY_STATUS
-#  default y
-
-#config ZMK_WIDGET_OUTPUT_STATUS
-#  default y
 
 # I2C for OLED
 config I2C
@@ -29,7 +20,7 @@ config SSD1306
 
 endif
 
-if SHIELD_ICARUS_LEFT || SHIELD_ICARUS_RIGHT
+if SHIELD_SORA_LEFT || SHIELD_SORA_RIGHT
 
 config ZMK_SPLIT
   default y

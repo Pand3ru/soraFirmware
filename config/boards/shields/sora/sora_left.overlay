@@ -1,0 +1,28 @@
+#include "sora.dtsi"
+
+/ {
+    chosen {
+        //zephyr,display = &oled_128x32;
+        zephyr,display = &oled;
+    };
+};
+
+&default_transform {
+    col-offset = <0>;
+};
+
+&kscan0 {
+    status = "okay";
+    col-gpios
+        = <&pro_micro 2 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 3 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 4 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 5 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 6 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&left_encoder {
+    status = "okay";
+};
+
