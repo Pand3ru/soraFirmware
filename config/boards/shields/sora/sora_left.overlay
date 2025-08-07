@@ -47,7 +47,6 @@
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
-        com-pins = <0x12>;
     };
 };
 
