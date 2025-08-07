@@ -6,18 +6,6 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
   default y
 
-# OLED Display 
-config ZMK_DISPLAY
-  default y
-
-# I2C for OLED
-config I2C
-  default y
-
-# SSD1306 Display Driver
-config SSD1306
-  default y
-
 endif
 
 if SHIELD_SORA_LEFT || SHIELD_SORA_RIGHT
@@ -25,4 +13,28 @@ if SHIELD_SORA_LEFT || SHIELD_SORA_RIGHT
 config ZMK_SPLIT
   default y
 
+  if ZMK_DISPLAY
+    config I2C
+      default y
+
+    config SSD1306
+      default y
+  endif 
+
+  if LVGL
+
+config LV_Z_VDB_SIZE
+    default 64
+
+config LV_DPI_DEF
+    default 148
+
+config LV_Z_BITS_PER_PIXEL
+    default 1
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
+endif # LVGL
 endif
